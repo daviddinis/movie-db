@@ -55,3 +55,6 @@ frontend/.svelte-kit/
 /frontend/.env
 /frontend/.env.*
 .byebug_history
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+

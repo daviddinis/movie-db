@@ -1,24 +1,26 @@
-# README
+# Movies App — Rails API + Svelte Frontend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
+- Ruby 3.x, Rails 7.x
+- Node.js 18+
+- npm or yarn
 
-Things you may want to cover:
+## Backend Setup (Rails)
+bundle install
+rails db:create
+rails db:migrate
+bundle exec rails server
 
-* Ruby version
+API runs at: http://localhost:3000
 
-* System dependencies
+## Frontend Setup (Svelte)
+cd frontend
+npm install
+npm run dev
 
-* Configuration
+Frontend runs at: http://localhost:5173
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running the App
+- Start Rails backend (`rails s`)
+- Start Svelte frontend (`npm run dev`)
