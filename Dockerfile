@@ -72,7 +72,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # Move frontend dist to Rails public folder
-RUN cp -r .svelte-kit/output ../public/build
+RUN mkdir -p ../public/build && cp -r build/* ../public/build
 
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
