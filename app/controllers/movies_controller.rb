@@ -2,6 +2,10 @@
 class MoviesController < ApplicationController
   include MoviesHelper
   PAGE_SIZE = 20
+  
+  def index
+    render file: Rails.root.join("public", "build", "index.html"), layout: false
+  end
 
   def search
     if params[:date_start].blank? || params[:date_end].blank?

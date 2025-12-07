@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get '/movies' => 'movies#search', as: :movies_homepage
+  get '/' => 'movies#index', as: :homepage
 end
