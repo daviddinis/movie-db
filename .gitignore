@@ -54,3 +54,4 @@ frontend/.svelte-kit/
 # dotenv for frontend
 /frontend/.env
 /frontend/.env.*
+.byebug_history
