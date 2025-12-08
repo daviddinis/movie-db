@@ -72,14 +72,15 @@ COPY frontend/ ./
 RUN npm run build
 
 # Move frontend dist to Rails public folder
-RUN mkdir -p ../public/build && cp -r build/* ../public/build
+RUN mkdir -p ../public && cp -r build/* ../public
+
+WORKDIR /rails
+RUN chown -R 1000:1000 public/
 
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash
 USER 1000:1000
-
-WORKDIR /rails
 
 # Copy built artifacts: gems, application
 COPY --chown=rails:rails --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"

@@ -2,7 +2,7 @@
 class MoviesController < ApplicationController
   include MoviesHelper
   PAGE_SIZE = 20
-  
+
   def index
     render file: Rails.root.join("public", "build", "index.html"), layout: false
   end
